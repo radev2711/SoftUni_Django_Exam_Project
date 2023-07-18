@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <section id="create-page" class="auth">
+    <div class="container">
+        <h1>Delete Tournament?</h1>
+
+        <form id='delete' method="post" action="{% url 'tourney-delete' object.pk %}">
+            {% csrf_token %}
+            <h3>{{ object.title }} for {{ object.to_game }}</h3>
+
+            <input class="btn submit" type="submit" value="Delete Tournament">
+            <a href="{% url 'tourney-details' object.pk %}" class="button">Back</a>
+        </form>
+
+    </div>
+</section>
+
+{% endblock %}

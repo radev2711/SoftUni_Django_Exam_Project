@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+
+
+    <section id="game-details">
+        <h1>Profile Details</h1>
+        <div class="info-section">
+            <div class="game-header">
+
+                <h1>{{ object.nickname}}</h1>
+                <!-- user email -->
+                <p class="text">Email: {{ object.email }}</p>
+                <!-- user age -->
+                <p class="text">Age: {{ object.age }}</p>
+                <p class="text">Member since: {{ object.date_joined }}</p>
+
+{#                <p class="text">Games Reviewed: {{ all_games.count }}</p>#}
+
+{#                <p class="text">Games Rated: {{ total_rating|floatformat:1 }}</p>#}
+
+                <div class="buttons">
+                    <a href="{% url 'user-edit' request.user.pk %}" class="button">Edit</a>
+                    <a href="{% url 'user-delete' request.user.pk %}" class="button">Delete</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{%  endblock %}

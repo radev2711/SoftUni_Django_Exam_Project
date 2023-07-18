@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="formbox">
+    <h1>Edit Review</h1>
+    <form method="post" action="{% url 'review-edit' object.pk %}">
+    {% csrf_token %}
+    {{ form.errors }}
+    {{ form }}
+    <button class="btnform" type="submit">Save</button>
+    </form>
+    </div>
+{% endblock %}

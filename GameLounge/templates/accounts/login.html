@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+
+{% block content %}
+
+    <div class="formbox">
+            <h1>Log in</h1>
+
+            <form method="post" action="{% url 'user-login' %}">
+
+            {% csrf_token %}
+            {{ form }}
+
+            <input type="hidden" name="next" value="{{ next }}">
+            <button class="btnform" type="submit">Login</button>
+
+            <span>New here?</span>
+
+            <button class="btnform" type="submit">
+                <a href="{% url 'user-register' %}?next={{ next }}">Register</a>
+            </button>
+
+            </form>
+        </div>
+
+{% endblock %}

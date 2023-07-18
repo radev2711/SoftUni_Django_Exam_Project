@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- headlines and default image -->
+    <section id="welcome-world">
+        <div class="welcome-message">
+            <h2>Welcome to</h2>
+            <h1>the GamingLounge</h1>
+        </div>
+    </section>
+    <div class="cardcontainer">
+    <a class="cardlink one" href="{% url 'lounge' %}">
+        Games
+    </a>
+    <a class="cardlink two" href="{% url 'tourney-all' %}">
+        Tournaments
+    </a>
+    </div>
+{% endblock %}

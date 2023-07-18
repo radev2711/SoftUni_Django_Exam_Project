@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="formbox">
+    <form method="post" action="{% url 'game-create' %}">
+    {% csrf_token %}
+    {{ form.errors }}
+    {{ form }}}}
+    <button class="btnform" type="submit">Create</button>
+    </form>
+    </div>
+{% endblock %}
