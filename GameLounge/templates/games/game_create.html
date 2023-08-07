@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="formbox">
+    <div class="form-container">
+    <h2>Add Game</h2>
+
     <form method="post" action="{% url 'game-create' %}">
+
     {% csrf_token %}
     {{ form.errors }}
-    {{ form }}}}
-    <button class="btnform" type="submit">Create</button>
+    {{ form }}
+
+    <button class="btn-form" type="submit">Create</button>
+
     </form>
     </div>
+
 {% endblock %}

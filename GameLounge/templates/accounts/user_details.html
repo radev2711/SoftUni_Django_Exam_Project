@@ -2,22 +2,21 @@
 
 {%  block content %}
 
-
-    <section id="game-details">
-        <h1>Profile Details</h1>
+    <section id="user-details">
+        <h2>Profile Details</h2>
         <div class="info-section">
-            <div class="game-header">
+            <div class="user-header">
 
-                <h1>{{ object.nickname}}</h1>
-                <!-- user email -->
-                <p class="text">Email: {{ object.email }}</p>
-                <!-- user age -->
-                <p class="text">Age: {{ object.age }}</p>
-                <p class="text">Member since: {{ object.date_joined }}</p>
+                <h3>{{ object.nickname}}</h3>
 
-{#                <p class="text">Games Reviewed: {{ all_games.count }}</p>#}
+                <p class="user-text">Email: {{ object.email }}</p>
 
-{#                <p class="text">Games Rated: {{ total_rating|floatformat:1 }}</p>#}
+                <p class="user-text">Age: {{ object.age }}</p>
+                <p class="user-text">Member since: {{ object.date_joined }}</p>
+
+{#                <p class="user-text">Games Reviewed: {{ all_games.count }}</p>#}
+
+{#                <p class="user-text">Games Rated: {{ total_rating|floatformat:1 }}</p>#}
 
                 <div class="buttons">
                     <a href="{% url 'user-edit' request.user.pk %}" class="button">Edit</a>
@@ -26,4 +25,5 @@
             </div>
         </div>
     </section>
+
 {%  endblock %}

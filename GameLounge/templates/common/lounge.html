@@ -2,21 +2,22 @@
 {% load static %}
 
 {% block content %}
+
     <form class="searchbar" method="post">
     {% csrf_token %}
     {{ search_form }}
     <button>
-        <img src="{% static 'images/search.png' %}" alt="search" height="18">
+        <img src="{% static 'images/magnifying-glass-solid.svg' %}" alt="search" height="18">
     </button>
     </form>
 
     {% if not games %}
-    <h2 class="allgames">No Games Currently</h2>
+    <h2 class="allgames">No Games Yet!</h2>
     {% else %}
-      <section id="welcome-world">
+      <section id="lounge-games">
         {% for game in games %}
 
-        <div class="game">
+        <article class="game">
             <div class="image-wrap">
 
                 <img src="{{ game.image }}"
@@ -34,9 +35,9 @@
             {% endif %}
 
             <div class="data-buttons">
-                <a href="{% url 'game-details' game.pk %}" class="btn details-btn">More</a>
+                <a href="{% url 'game-details' game.pk %}" class="details-btn">More</a>
             </div>
-        </div>
+        </article>
         {% endfor %}
         </section>
     {% endif %}

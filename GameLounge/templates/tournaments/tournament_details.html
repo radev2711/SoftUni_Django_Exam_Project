@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <section id="game-details">
-        <h1>Event Details</h1>
+    <section id="tournament-details">
+        <h2>Event Details</h2>
         <div class="info-section">
-            <div class="game-header">
+            <div class="tournament-info">
 
-                <h1>{{ object.title }}</h1>
+                <h3>{{ object.title }}</h3>
 
-                <p><span class="type">{{ object.to_game }}</span></p>
-                <p><span class="type">Starts: {{ object.start_date }}</span></p>
+                <p><span class="info-field">{{ object.to_game }}</span></p>
+                <p><span class="info-field">Starts: {{ object.start_date }}</span></p>
 
-                <p><span class="type">Ends: {{ object.end_date }}</span></p>
-                <p><span class="type">Hosts: {{ object.host }}</span></p>
-                <p><span class="type">Reward: {{ object.prise }} €</span></p>
-                <p><span class="type">Participants: {{ object.participants.count }}</span></p>
+                <p><span class="info-field">Ends: {{ object.end_date }}</span></p>
+                <p><span class="info-field">Hosts: {{ object.host }}</span></p>
+                <p><span class="info-field">Reward: {{ object.prise }} €</span></p>
+                <p><span class="info-field">Participants: {{ object.participants.count }}</span></p>
             </div>
 
             {% if request.user.is_authenticated %}
@@ -22,6 +22,8 @@
                 <a href="{% url 'tourney-join' object.pk %}" class="button">Join Event</a>
                 {% if request.user.is_staff %}
                 <a href="{% url 'tourney-edit' object.pk %}" class="button">Edit</a>
+                {% endif %}
+                {% if request.user.is_superuser %}
                 <a href="{% url 'tourney-delete' object.pk %}" class="button">Delete</a>
                 {% endif %}
             </div>

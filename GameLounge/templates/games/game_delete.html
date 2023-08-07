@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <section id="create-page" class="auth">
+    <section class="delete-form">
     <div class="container">
-        <h1>Delete Game?</h1>
+        <h2>Delete Game?</h2>
 
         <form id='delete' method="post" action="{% url 'game-delete' object.pk %}">
             {% csrf_token %}
             <h3>{{ object.title }}</h3>
 
             <input class="btn submit" type="submit" value="Delete Game">
-            <a href="{% url 'game-details' object.pk %}" class="button">Back</a>
+            <a href="{% url 'game-details' object.pk %}" class="button back">Back</a>
         </form>
 
     </div>

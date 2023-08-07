@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <!-- headlines and default image -->
-    <section id="welcome-world">
+
+    <section class="welcome-words">
         <div class="welcome-message">
             <h2>Welcome to</h2>
-            <h1>the GamingLounge</h1>
+            <h2>the Gaming Lounge</h2>
         </div>
     </section>
+
     <div class="cardcontainer">
     <a class="cardlink one" href="{% url 'lounge' %}">
         Games
@@ -16,4 +17,5 @@
         Tournaments
     </a>
     </div>
+
 {% endblock %}

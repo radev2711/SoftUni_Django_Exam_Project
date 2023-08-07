@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <title>GamingLounge</title>
+</head>
+
+<body>
+    <header>
+        <h1><a class="home" href="{% url 'home-page' %}">Gaming Lounge</a></h1>
+    </header>
+
+<main>
+
+    <div class="not-found">
+        <h3>
+            Uh oh,<br> something broke.
+        </h3>
+
+        <h3>The cat is biting the cables again!</h3>
+
+        <a href="{% url 'home-page' %}">
+            <button class="btn-404">Return to Home Page</button>
+        </a>
+    </div>
+
+
+</main>
+
+    <footer>
+        &copy;SoftUni 2023. IvoR Creative. All rights reserved.
+    </footer>
+
+</body>
+</html>

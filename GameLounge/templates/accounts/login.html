@@ -3,8 +3,8 @@
 
 {% block content %}
 
-    <div class="formbox">
-            <h1>Log in</h1>
+    <div class="form-container">
+            <h2>Log in</h2>
 
             <form method="post" action="{% url 'user-login' %}">
 
@@ -12,11 +12,11 @@
             {{ form }}
 
             <input type="hidden" name="next" value="{{ next }}">
-            <button class="btnform" type="submit">Login</button>
+            <button class="btn-form" type="submit">Login</button>
 
             <span>New here?</span>
 
-            <button class="btnform" type="submit">
+            <button class="btn-form" type="submit">
                 <a href="{% url 'user-register' %}?next={{ next }}">Register</a>
             </button>
 

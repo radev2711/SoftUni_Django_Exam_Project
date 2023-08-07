@@ -3,8 +3,8 @@
 
 {% block content %}
 
-    <div class="formbox">
-            <h1>Sit with us</h1>
+    <div class="form-container">
+            <h2>Sit with us</h2>
 
             <form method="post" action="{% url 'user-register' %}">
 
@@ -20,7 +20,7 @@
             {{form.password2|placeholder:'Repeat Password'}}
 
             <input type="hidden" name="next" value="{{ next }}">
-            <button class="btnform" type="submit">Register</button>
+            <button class="btn-form" type="submit">Register</button>
 
             </form>
         </div>

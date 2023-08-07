@@ -2,21 +2,21 @@
 {% block content %}
 
     <section id="game-details">
-        <h1>Game Details</h1>
+        <h2>Game Details</h2>
         <div class="info-section">
-            <div class="game-header">
+            <div class="game-info">
 
                 <img class="game-img"
                      src="{{ object.image }}"
                      alt='game image'/>
 
-                <h1>{{ object.title }}</h1>
+                <h3>{{ object.title }}</h3>
 
-                <p><span class="type">Category: {{ object.genre }}</span></p>
-                <p><span class="type">Rating: {{ rating|floatformat:1 }}</span></p>
+                <p><span class="info-field">Category: {{ object.genre }}</span></p>
+                <p><span class="info-field">Rating: {{ rating|floatformat:1 }} from {{ num_ratings }} users</span></p>
 
-                <p><span class="type">Developer: {{ object.developer }}</span></p>
-                <p><span class="type">Price: {{ object.price }} €</span></p>
+                <p><span class="info-field">Developer: {{ object.developer }}</span></p>
+                <p><span class="info-field">Price: {{ object.price }} €</span></p>
             </div>
 
             {% if request.user.is_authenticated %}
@@ -25,21 +25,28 @@
                 <a href="{% url 'review-create' game_id=object.pk user_id=request.user.pk %}" class="button">Review</a>
                 {% if request.user.is_staff %}
                 <a href="{% url 'game-edit' object.pk %}" class="button">Edit</a>
+                {% endif %}
+                {% if request.user.is_superuser %}
                 <a href="{% url 'game-delete' object.pk %}" class="button">Delete</a>
                 {% endif %}
+
             </div>
             {% endif %}
 
         </div>
     </section>
+
     <section id="game-reviews">
         {% for review in reviews %}
-            <div class="review-div">
+            <div class="review-wrapper">
+{#      truncatewords_html:50      #}
             <p>{{ review.text }}</p>
             <p>From: {{ review.from_user.nickname }}</p>
                 {% if review.from_user.pk == request.user.pk %}
+                    <div class="buttons">
             <a href="{% url 'review-edit' review.pk %}" class="button ed">Edit</a>
             <a href="{% url 'review-delete' review.pk %}" class="button">Delete</a>
+                    </div>
                 {% endif %}
             </div>
         {% endfor %}

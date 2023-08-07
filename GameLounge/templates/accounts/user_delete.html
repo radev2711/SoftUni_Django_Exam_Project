@@ -1,15 +1,15 @@
 {%  extends 'base.html' %}
 {% block content %}
 
-<section id="create-page" class="auth">
+<section class="delete-form">
     <div class="container">
-        <h1>Are you sure you want to delete your profile?</h1>
+        <h2>Are you sure you want to delete your profile?</h2>
 
         <form id='delete' method="post" action="{% url 'user-delete' request.user.pk %}">
             {% csrf_token %}
 
             <input class="btn submit" type="submit" value="Yes">
-            <a href="{% url 'user-details' request.user.pk %}" class="button">No</a>
+            <a href="{% url 'user-details' request.user.pk %}" class="button back">Back</a>
         </form>
 
     </div>

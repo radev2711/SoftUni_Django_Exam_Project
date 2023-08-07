@@ -10,15 +10,12 @@
 </head>
 
 <body>
-<div id="box">
     <header>
-
-        <!-- Navigation Bar -->
-        <h1><a class="home" href="{% url 'home-page' %}">GamingLounge</a></h1>
+        <h1><a class="home" href="{% url 'home-page' %}">Gaming Lounge</a></h1>
         <nav>
             <ul>
-                <li><a href="{% url 'lounge' %}">Games</a></li>
-                <li><a href="{% url 'tourney-all' %}">Tourneys</a></li>
+                <li class="hide"><a href="{% url 'lounge' %}">Games</a></li>
+                <li class="hide"><a href="{% url 'tourney-all' %}">Tourneys</a></li>
                 {% if not request.user.is_authenticated %}
                 <li><a href="{% url 'user-login' %}?next={{request.path}}">Login</a></li>
                 {% else %}
@@ -27,7 +24,7 @@
                         <li><a href="{% url 'tourney-create' %}">Add Tourney</a></li>
                     {% endif %}
                 <li><a href="{% url 'user-details' request.user.pk%}">Profile</a></li>
-                <li><a href="{% url 'user-logout' %}">Logout</a></li>
+                <li><a href="{% url 'user-logout' %}?next={{request.path}}">Logout</a></li>
                 {% endif %}
 
             </ul>
@@ -37,11 +34,9 @@
 {% block content %}
 {% endblock %}
 
-    <!-- footer -->
     <footer>
         &copy;SoftUni 2023. IvoR Creative. All rights reserved.
     </footer>
 
-</div>
 </body>
 </html>
