@@ -10,4 +10,7 @@ class TournamentModel(models.Model):
     end_date = models.DateTimeField()
     host = models.CharField(max_length=50)
     prise = models.PositiveIntegerField()
-    participants = models.ManyToManyField(ProfileModel, default=None, null=True, blank=True)
+    participants = models.ManyToManyField(ProfileModel, default=None)
+
+    def __str__(self):
+        return f'{self.title} tourney'

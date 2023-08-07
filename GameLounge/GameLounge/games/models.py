@@ -9,7 +9,6 @@ class GameModel(models.Model):
     genre = models.CharField(max_length=50)
     developer = models.CharField(max_length=50)
     price = models.FloatField(validators=[MinValueValidator(0.0)])
-    rating = models.PositiveIntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.title

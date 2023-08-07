@@ -1,4 +1,4 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -6,10 +6,16 @@ from .forms import TournamentCreateForm
 from GameLounge.tournaments.models import TournamentModel
 
 
-class TournamentCreateView(CreateView):
+class TournamentCreateView(UserPassesTestMixin, CreateView):
     form_class = TournamentCreateForm
     template_name = 'tournaments/tournament_create.html'
     success_url = reverse_lazy('tourney-all')
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+    def handle_no_permission(self):
+        return redirect('tourney-all')
 
 
 class TournamentDetailsView(DetailView):
@@ -17,19 +23,31 @@ class TournamentDetailsView(DetailView):
     template_name = 'tournaments/tournament_details.html'
 
 
-class TournamentEditView(UpdateView):
+class TournamentEditView(UserPassesTestMixin, UpdateView):
     model = TournamentModel
     form_class = TournamentCreateForm
     template_name = 'tournaments/tournament_edit.html'
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+    def handle_no_permission(self):
+        return redirect('tourney-all')
 
     def get_success_url(self):
         return reverse_lazy('tourney-details', kwargs={'pk':self.object.pk})
 
 
-class TournamentDeleteView(DeleteView):
+class TournamentDeleteView(UserPassesTestMixin, DeleteView):
     model = TournamentModel
     template_name = 'tournaments/tournament_delete.html'
     success_url = reverse_lazy('tourney-all')
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def handle_no_permission(self):
+        return redirect('tourney-all')
 
 
 def show_tournaments_view(request):
