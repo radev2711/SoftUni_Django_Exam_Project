@@ -1,0 +1,239 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-image: url('../images/bg01.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+    padding: 0.2em 1rem;
+}
+
+ul {
+    margin: 0 1rem;
+}
+
+li {
+    list-style-position: inside;
+}
+
+a {
+    margin: 0.2em;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+span {
+    color: white;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+button {
+    font-weight: bold;
+    padding: 0.2em;
+    margin: 0.2em;
+    border: 1px solid white;
+    border-radius: 0.3em;
+    background-color: transparent;
+}
+
+header,
+footer {
+    background-color: #191970;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+}
+
+footer {
+    text-align: center;
+}
+
+header {
+    position: relative;
+    padding: 10px;
+}
+
+header h1 {
+    display: inline-block;
+    background-color: #191970;
+    color: white;
+    margin-bottom: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header nav {
+    display: inline-block;
+    font-size: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: absolute;
+    right: 0;
+    bottom: 16px;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav>* {
+    float: left;
+}
+
+footer {
+    padding: 0.5em;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+nav a {
+    margin: 0 0.5em;
+}
+
+nav a:hover {
+    cursor: pointer;
+    color: rgb(82, 133, 139);
+    font-weight: bolder;
+}
+
+.home:hover {
+    color: rgb(82, 133, 139);
+}
+
+#lounge-games {
+    width: auto;
+    justify-content: right;
+    padding: 25px 15px 20px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#lounge-games .welcome-message {
+    display: inline-block;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    top: 40%;
+    text-align: center;
+    width: 30%
+}
+
+#lounge-games>img {
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 60%;
+    margin-left: auto;
+
+}
+
+.welcome-words {
+    width: auto;
+    padding: 25px 15px 20px;
+    position: relative;
+    text-align: center;
+}
+
+.welcome-message {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    width: 30%
+}
+
+.allgames,
+.all-tourneys,
+.welcome-message h2 {
+    color: #FFD700;
+    font-size: 300%;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: "Agency FB", serif;
+}
+
+.all-tourneys,
+.allgames {
+    margin: 40px auto;
+    text-align: center;
+}
+
+.cardlink {
+    display: inline-block;
+    width: 240px;
+    height: 320px;
+    color: #FFD700;
+    text-align: center;
+    padding-top: 24px;
+}
+
+.cardlink:hover {
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+}
+
+.cardlink.one {
+    background-image: url('../images/games3.png');
+    background-position: center;
+    background-size: cover;
+    margin-left: 28%;
+}
+
+.cardlink.two {
+    background-image: url('../images/tourn.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-left: 10%;
+}
+
+.cardcontainer {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 1200px) {
+    header nav {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    header h1 {
+        font-size: 20px;
+    }
+    header nav {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 740px) {
+    .hide {
+        display: none;
+    }
+}
+
+@media (max-width: 570px) {
+    header h1 {
+        display: block;
+        text-align: center;
+    }
+    header nav {
+        display: block;
+        position: static;
+    }
+}

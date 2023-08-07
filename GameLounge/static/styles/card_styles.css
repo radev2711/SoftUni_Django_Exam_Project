@@ -1,0 +1,208 @@
+.game {
+    margin: 20px 1em 0.5em 50px;
+    box-shadow: 0 0 30px 0;
+    padding: 32px;
+    border-radius: 16px;
+    float: left;
+    height: 500px;
+    color: #a17f1a;
+    width: 27vw;
+}
+
+.game h3 {
+    font-family: "Agency FB", serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.5s ease-out;
+    text-align: center;
+    color: #FFD700;
+}
+
+.game-info h3,
+#tournament-details h3 {
+    color: #a17f1a;
+    margin-top: 5px;
+    font-size: 36px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.game-img {
+    position: relative;
+    float: left;
+    margin-left: 15px;
+    margin-right: 22px;
+    height: 220px;
+    border-radius: 16px;
+}
+
+.image-wrap {
+    width: 95%;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin: 8px;
+}
+
+
+#user-details,
+#game-details,
+#game-reviews,
+#tournament-details {
+    width: 90%;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+#tournament-details {
+    padding-bottom: 60px;
+}
+
+#user-details h2,
+#game-details h2,
+#tournament-details h2 {
+    color: white;
+    font-family: "Agency FB", serif;
+    font-size: 55px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.info-section {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    background-blend-mode: multiply;
+    border-radius: 16px;
+    background-color: #191970;
+    min-height: 300px;
+}
+
+.user-header {
+    position: relative;
+    padding: 25px;
+    height: 40%;
+}
+
+.user-header h3 {
+    color: #a17f1a;
+    margin-top: 5px;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.info-field {
+    display: inline-block;
+    color: #a17f1a;
+    font-size: 19px;
+    margin-left: 10px;
+}
+
+.user-text {
+    font-size: 25px;
+    color: #a17f1a;
+}
+
+.buttons {
+    height: 10%;
+    text-align: right;
+    padding-right: 15px;
+    padding-bottom: 14px;
+    padding-top: 14px;
+}
+
+.button {
+    height: 15%;
+    background-color: #8B0000;
+    padding: 14px;
+    margin-top: auto;
+    font-size: 21px;
+    color: white;
+    border-radius: 16px;
+    display: inline-block;
+}
+
+.data-buttons {
+    font-size: 1.4rem;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.details-btn {
+    background-color: #8B0000;
+    font-size: 1.4rem;
+    margin-top: 10px;
+    color: white;
+    padding: 0.7em 1.2em;
+    border-radius: 8px;
+}
+
+.details-btn:hover {
+    background-color: rgb(192, 129, 117);
+    color: white;
+}
+
+.review-wrapper {
+    color: white;
+    background-color: #191970;
+    padding: 16px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 8px;
+}
+
+.tournament-info {
+    margin: 8px 40px;
+}
+
+@media (max-width: 1420px) {
+    .game h3 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .game {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 860px) {
+    .game {
+        width: 60vw;
+        margin-left: 20%;
+        height: 400px;
+    }
+
+    .game-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .game h3 {
+        font-size: 20px;
+    }
+    #game-details h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    #game-reviews {
+        padding-bottom: 60px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-flow: wrap;
+    }
+}

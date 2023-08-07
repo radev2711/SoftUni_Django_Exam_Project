@@ -1,8 +1,9 @@
-@import "typography.css";
-@import "details.css";
+@import "reset.css";
+@import "base_styles.css";
 @import "form_styles.css";
-@import "welcome.css";
-@import "navigation_styles.css";
+@import "card_styles.css";
+@import "404_styles.css";
+
 
 /*
 colors = {
