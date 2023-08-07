@@ -1,4 +1,5 @@
 from django.contrib.auth import login
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DetailView, DeleteView
 from django.contrib.auth.views import LoginView, LogoutView
@@ -26,7 +27,6 @@ class UserRegisterView(CreateView):
         return context
 
     def get_success_url(self):
-        print(self.request.POST)
         return self.request.POST.get('next', self.success_url)
 
 
@@ -44,15 +44,15 @@ class UserLoginView(LoginView):
 
 
 class UserLogoutView(LogoutView):
-    next_page = reverse_lazy('home-page')
+    next_page = None
 
 
-class UserDetailsView(DetailView):
+class UserDetailsView(LoginRequiredMixin, DetailView):
     model = ProfileModel
     template_name = 'accounts/user_details.html'
 
 
-class UserEditView(UpdateView):
+class UserEditView(LoginRequiredMixin, UpdateView):
     model = ProfileModel
     form_class = EditProfileForm
     template_name = 'accounts/user_edit.html'
@@ -61,12 +61,7 @@ class UserEditView(UpdateView):
         return reverse_lazy('user-details', kwargs={'pk':self.object.pk})
 
 
-class UserDeleteView(DeleteView):
+class UserDeleteView(LoginRequiredMixin, DeleteView):
     model = ProfileModel
     template_name = 'accounts/user_delete.html'
     success_url = reverse_lazy('home-page')
-
-    # def post(self, *args, pk):
-    #     self.request.user.delete()
-
-# test123@test.com

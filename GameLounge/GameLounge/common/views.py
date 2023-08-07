@@ -2,11 +2,12 @@ from django.shortcuts import render
 from GameLounge.games.models import GameModel
 from GameLounge.games.forms import SearchForGameForm
 
-# Create your views here.
+
+# def show_404(request):
+#     return render(request, '404.html')
 
 
 def home_page(request):
-
     return render(request, 'common/home_page.html')
 
 

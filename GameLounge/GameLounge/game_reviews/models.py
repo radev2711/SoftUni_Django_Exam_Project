@@ -32,7 +32,7 @@ class RateGameModel(models.Model):
         (9, 9),
         (10, 10),
     )
-    rating = models.PositiveIntegerField(choices=GAME_RATINGS, default=5)
 
+    rating = models.PositiveIntegerField(choices=GAME_RATINGS, default=5)
     from_user = models.ForeignKey(ProfileModel, on_delete=models.CASCADE)
     to_game = models.ForeignKey(GameModel, on_delete=models.CASCADE)

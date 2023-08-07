@@ -43,4 +43,4 @@ class ProfileModel(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
 
-    object = CustomUserManager()
+    objects = CustomUserManager()
